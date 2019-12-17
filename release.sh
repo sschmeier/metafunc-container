@@ -10,11 +10,12 @@ IMAGE=metafunc
 git pull
 
 # bump version
-docker run --rm -v "$PWD":/app sebio/bump patch
+sudo docker run --rm -v "$PWD":/app sebio/bump patch
 
 version=`cat VERSION`
-echo "version: $version"# run build
+echo "version: $version"
 
+# run build
 ./build.sh
 
 # tag it
@@ -24,6 +25,7 @@ git tag -a "$version" -m "version $version"
 git push
 git push --tags
 
-docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version# push it
-docker push $USERNAME/$IMAGE:latest
-docker push $USERNAME/$IMAGE:$version
+sudo docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
+# push it
+sudo docker push $USERNAME/$IMAGE:latest
+sudo docker push $USERNAME/$IMAGE:$version

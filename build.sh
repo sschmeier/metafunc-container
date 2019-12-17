@@ -6,4 +6,4 @@ USERNAME=sebio
 # image name
 IMAGE=metafunc
 
-docker build -t $USERNAME/$IMAGE:latest .
+sudo docker build -t $USERNAME/$IMAGE:latest .
