@@ -8,6 +8,6 @@ RUN conda config --add channels defaults && \
 
 RUN conda update -n base -c defaults conda
 
-RUN conda install --yes kaiju=1.7.2 taxonkit=0.5.0 sqlite pandas goatools=0.9.9 bbmap=38.75
+RUN conda install --yes kaiju=1.7.3 taxonkit=0.3.0 sqlite=3.30.1 pandas goatools=0.9.9 bbmap=38.75 fastp=0.20.0 STAR=2.7.3a subread=2.0.0
 
 RUN conda clean --index-cache --tarballs --packages --yes
